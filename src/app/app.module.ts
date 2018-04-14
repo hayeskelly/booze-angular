@@ -12,6 +12,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AppRouterModule } from './router/router.module';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { OrderComponent } from './order/order.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ContactComponent } from './contact/contact.component';
     ProductDetailComponent,
     NavBarComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
