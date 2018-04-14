@@ -10,6 +10,8 @@ import { ProductService } from './products/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AppRouterModule } from './router/router.module';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { AppRouterModule } from './router/router.module';
     AppComponent,
     ProductsComponent,
     ProductDetailComponent,
-    NavBarComponent
+    NavBarComponent,
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
