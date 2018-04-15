@@ -27,5 +27,4 @@ export class ProductsComponent implements OnInit {
   onSelect(product: IProduct): void {
     this.selectedProduct = product;
   }
-
 }

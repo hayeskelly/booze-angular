@@ -23,7 +23,7 @@ import { OrderComponent } from './order/order.component';
     NavBarComponent,
     HomeComponent,
     ContactComponent,
-    OrderComponent
+    OrderComponent,
   ],
   imports: [
     BrowserModule,

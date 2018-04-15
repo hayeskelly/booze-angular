@@ -1,9 +1,10 @@
 <div *ngIf='product'>
 
+<div class = "column">
   <h2>{{product.name}} Details</h2>
 
   <div>
-    <span>Price: </span>{{product.price}}
+    <span>Price: </span>$ {{product.price}}.00
   </div>
   
   <div>
@@ -11,8 +12,18 @@
   </div>
   
   <div>
-    <span>Type: </span>{{product.type}}
+    <span>Type: </span>{{product.subtype}}
   </div>
   
+  <div>
+    <span>Product ID: </span>{{product.id}}
+  </div>
+</div>
+
+<div class = "column">
+  <span>
+    <img width = 60 alt = {{product.imgName}} src = {{product.imgURL}}>
+  </span>
+</div>
   
 </div>
