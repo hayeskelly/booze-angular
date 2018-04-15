@@ -12,6 +12,7 @@ export class ProductService {
   private productsUrl = 'http://localhost:5000/api/products/all';
   
   getProducts(): Observable<IProduct[]>{
+    
     return this._http.get<IProduct[]>(this.productsUrl);
   }
 

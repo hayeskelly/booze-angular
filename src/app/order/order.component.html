@@ -1,59 +1,59 @@
 <div class="container">
 
-  <h1>Order</h1>
-
+    <h1>Order</h1>
+  
     <form>
-
-        <div class="form-group">
-
-            <label for="title">First Name</label>
-
-            <input type="text" class="form-control" id="title" required>
-
-          </div>
-
-        <div class="form-group">
-
-            <label for="title">Last Name</label>
-
-            <input type="text" class="form-control" id="title" required>
-
-          </div>
-
+  
           <div class="form-group">
-
-              <label for="title">Phone Number</label>
-
-              <input type="text" class="form-control" id="title" required>
-
+ 
+              <label for="fname">First Name</label>
+  
+              <input type="text" class="form-control" id="fname" required>
+  
             </div>
+  
+          <div class="form-group">
+  
+              <label for="lname">Last Name</label>
+  
+              <input type="text" class="form-control" id="lname" required>
+  
+            </div>
+  
+            <div class="form-group">
+  
+                <label for="phone">Phone Number</label>
+  
+                <input type="text" class="form-control" id="phone" required>
+  
+              </div>
+  
+        <div class="form-group">
+  
+          <label for="email">Email</label>
+  
+          <input type="text" class="form-control" id="email" required>
+  
+        </div>
+  
+        <div class="form-group">
+  
+          <label for="productID">Product ID</label>
+  
+          <input type="text" class="form-control" id="productID" required>
+  
+        </div>
+  
+        <div class="form-group">
+  
+          <label for="quantity">Quantity</label>
+  
+          <input type="text" class="form-control" id="quantity" required>
+  
+        </div>
 
-      <div class="form-group">
-
-        <label for="title">Email</label>
-
-        <input type="text" class="form-control" id="title" required>
-
-      </div>
-
-      <div class="form-group">
-
-        <label for="author">Product ID</label>
-
-        <input type="text" class="form-control" id="author" required>
-
-      </div>
-
-      <div class="form-group">
-
-        <label for="author">Quantity</label>
-
-        <input type="text" class="form-control" id="author" required>
-
-      </div>
-
-      <button type="login" class="btn btn-default">Order</button>
-
-    </form>
-
-</div>
+        <button type="submit" class="btn btn-default" (click)="PostData()">Order</button>
+  
+      </form>
+  
+  </div>
