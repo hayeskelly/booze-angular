@@ -1,0 +1,23 @@
+p {
+    list-style-type: none;
+    margin: 50;
+    padding: 10;
+    overflow: hidden;
+    background-color: rgb(255, 36, 0);
+}
+
+a {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 70px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: grey;
+}

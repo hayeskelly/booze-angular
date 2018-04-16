@@ -3,3 +3,9 @@
     width: 33.33%;
 }
 
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: rgb(107, 105, 105);
+    font-weight: bolder;
+}
