@@ -4,9 +4,6 @@
 <div class = "column">
   <ul class="products">
     <li *ngFor="let product of products" [class.selected]="product === selectedProduct" (click)="onSelect(product)">
-      <span>
-        <img width=40 alt="{{product.imgName}}" src="{{product.imgURL}}">
-      </span>
       {{product.name}}
     </li>
   </ul>
