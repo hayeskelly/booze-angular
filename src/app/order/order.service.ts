@@ -13,26 +13,35 @@ export class OrderService {
   constructor(private _http: HttpClient) { }
 
   private submitOrderUrl = 'http://localhost:5000/api/orders';
+  public orderId: number;
 
   order: IOrder;
   
   submitOrder(order: IOrder): Observable<IOrder>  {
-
+    
+    //generate random orderId
+    this.orderId = Math.floor(Math.random() * 1000);
+    
     var info = {
-      id: 1234,
+      id: this.orderId,
       fname: order.fname,
       lname: order.lname,
       phone: order.phone,
       email: order.email,
-      productId: order.productId,
+      productID: order.productID,
       quantity: order.quantity
     }
-    
+
+    console.log("Order service was pased a product id of "+info.productID);
+
     let header = new HttpHeaders();
     header.append('Content-Type', 'application/json');
     header.append('Access-Control-Allow-Origin', 'http://localhost:4200');
 
     return this._http.post<IOrder>(this.submitOrderUrl, info, {headers: header});
+    
+    //.map((data: any) => 
+    //  {return new <IOrder>();});
   }
 
 }

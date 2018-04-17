@@ -4,7 +4,7 @@ export interface IOrder {
     lname: string;
     phone: string;
     email: string;
-    productId: number;
+    productID: number;
     quantity: number;
     total: number;
     pickupNum: number;
