@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { IOrder } from './order';
 import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 import { NumberValueAccessor } from '@angular/forms/src/directives/number_value_accessor';
+import { StringDecoder } from 'string_decoder';
 
 @Component({
   selector: 'app-order',
@@ -15,6 +16,7 @@ export class OrderComponent implements OnInit {
   form: FormGroup;
   order: IOrder;
   orderId: number;
+  //myOrderData: String;
   
   constructor(private fb: FormBuilder, private _orderService: OrderService) {
     this.form = this.fb.group({
@@ -30,15 +32,11 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
   }
 
-  PostData(form: NgForm) 
-  {
-    console.log("Order component sending productID: "+form.value.productID);
+  PostData(form: NgForm) {
+    
+    console.log("Order component sending productID Ordered: "+form.value.productID);
 
-    this._orderService.submitOrder(form.value)
-      .subscribe(order => {
-          this.order = order;
-      },
-    error => console.log(error));
+    this._orderService.submitOrder(form.value).subscribe(order => {this.order = order;}, error => console.log(error));
   }
 
 }

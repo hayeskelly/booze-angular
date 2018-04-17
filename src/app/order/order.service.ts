@@ -39,9 +39,6 @@ export class OrderService {
     header.append('Access-Control-Allow-Origin', 'http://localhost:4200');
 
     return this._http.post<IOrder>(this.submitOrderUrl, info, {headers: header});
-    
-    //.map((data: any) => 
-    //  {return new <IOrder>();});
   }
 
 }
