@@ -1,59 +1,59 @@
 <div class="container">
 
-    <h1>Order</h1>
-  
-    <form #orderForm="ngForm" (ngSubmit)="PostData(orderForm);">
-  
-          <div class="form-group">
- 
-              <label for="fname">First Name</label>
-  
-              <input type="text" class="form-control" id="fname" name="fname" #fname="ngModel" [(ngModel)]="orderForm.fname" required>
-  
-            </div>
-  
-          <div class="form-group">
-  
-              <label for="lname">Last Name</label>
-  
-              <input type="text" class="form-control" id="lname" name="lname" #lname="ngModel" [(ngModel)]="orderForm.lname" required>
-  
-            </div>
-  
-            <div class="form-group">
-  
-                <label for="phone">Phone Number</label>
-  
-                <input type="text" class="form-control" id="phone" name="phone" #phone="ngModel" [(ngModel)]="orderForm.phone"required>
-  
-              </div>
-  
-        <div class="form-group">
-  
-          <label for="email">Email</label>
-  
-          <input type="text" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="orderForm.email" required>
-  
-        </div>
-  
-        <div class="form-group">
-  
-          <label for="productID">Product ID</label>
-  
-          <input type="text" class="form-control" id="productID" name="productID" #productID="ngModel" [(ngModel)]="orderForm.productID" required>
-  
-        </div>
-  
-        <div class="form-group">
-  
-          <label for="quantity">Quantity</label>
-  
-          <input type="text" class="form-control" id="quantity" name="quantity" #quantity="ngModel" [(ngModel)]="orderForm.quantity" required>
-  
-        </div>
+  <h1>Order</h1>
 
-        <button type="submit" class="btn btn-default">Order</button>
-  
-      </form>
-  
-  </div>
+  <form #orderForm="ngForm" (ngSubmit)="PostData(orderForm);">
+
+        <div class="form-group">
+
+            <label for="fname">First Name</label>
+
+            <input type="text" class="form-control" id="fname" name="fname" #fname="ngModel" [(ngModel)]="orderForm.fname" required>
+
+          </div>
+
+        <div class="form-group">
+
+            <label for="lname">Last Name</label>
+
+            <input type="text" class="form-control" id="lname" name="lname" #lname="ngModel" [(ngModel)]="orderForm.lname" required>
+
+          </div>
+
+          <div class="form-group">
+
+              <label for="phone">Phone Number</label>
+
+              <input type="text" class="form-control" id="phone" name="phone" #phone="ngModel" [(ngModel)]="orderForm.phone"required>
+
+            </div>
+
+      <div class="form-group">
+
+        <label for="email">Email</label>
+
+        <input type="text" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="orderForm.email" required>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="productID">Product ID</label>
+
+        <input type="text" class="form-control" id="productID" name="productID" #productID="ngModel" [(ngModel)]="orderForm.productID" required>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="quantity">Quantity</label>
+
+        <input type="text" class="form-control" id="quantity" name="quantity" #quantity="ngModel" [(ngModel)]="orderForm.quantity" required>
+
+      </div>
+
+      <button type="submit" class="btn btn-default">Order</button>
+
+    </form>
+
+</div>

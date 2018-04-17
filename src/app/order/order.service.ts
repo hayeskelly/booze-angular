@@ -12,14 +12,14 @@ export class OrderService {
 
   constructor(private _http: HttpClient) { }
 
-  private submitOrderUrl = 'http://localhost:5000/api/order';
+  private submitOrderUrl = 'http://localhost:5000/api/orders';
 
   order: IOrder;
   
   submitOrder(order: IOrder): Observable<IOrder>  {
 
     var info = {
-      id: 10,
+      id: 1234,
       fname: order.fname,
       lname: order.lname,
       phone: order.phone,
@@ -27,15 +27,12 @@ export class OrderService {
       productId: order.productId,
       quantity: order.quantity
     }
-
+    
     let header = new HttpHeaders();
     header.append('Content-Type', 'application/json');
     header.append('Access-Control-Allow-Origin', 'http://localhost:4200');
 
     return this._http.post<IOrder>(this.submitOrderUrl, info, {headers: header});
-    //.map((data: any) => {
-    //  return true;
-    //});
   }
 
 }

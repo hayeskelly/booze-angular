@@ -28,22 +28,14 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
   }
 
-  //PostData(order: IOrder){
-  //  this._orderService.submitOrder(order);
-  //}
-
   PostData(form: NgForm) {
     console.log("PostData() clicked");
-    //const val = this.form.value;
-    //console.log(val);
-
-    //if (val.fname && val.lname && val.phone && val.email && val.productID && val.quantity) {
+    console.log("Product Ordered: "+form.value.productID);
       this._orderService.submitOrder(form.value)
         .subscribe(order => {
           this.order = order;
         },
         error => console.log(error));
-    //}
   }
 
 }
