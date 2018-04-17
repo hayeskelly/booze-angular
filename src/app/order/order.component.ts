@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from './order.service';
 import { Observable } from 'rxjs/Observable';
 import { IOrder } from './order';
+import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-order',
@@ -10,9 +11,19 @@ import { IOrder } from './order';
 })
 export class OrderComponent implements OnInit {
 
-  constructor() {}
-
-  private _orderService: OrderService;
+  form: FormGroup;
+  order: IOrder;
+  
+  constructor(private fb: FormBuilder, private _orderService: OrderService) {
+    this.form = this.fb.group({
+      fname: [''],
+      lname: [''],
+      phone: [''],
+      email: [''],
+      productID: [''],
+      quantity: [''],
+    });
+  }
 
   ngOnInit() {
   }
@@ -21,8 +32,18 @@ export class OrderComponent implements OnInit {
   //  this._orderService.submitOrder(order);
   //}
 
-  PostData() {
-    this._orderService.submitOrder();
+  PostData(form: NgForm) {
+    console.log("PostData() clicked");
+    //const val = this.form.value;
+    //console.log(val);
+
+    //if (val.fname && val.lname && val.phone && val.email && val.productID && val.quantity) {
+      this._orderService.submitOrder(form.value)
+        .subscribe(order => {
+          this.order = order;
+        },
+        error => console.log(error));
+    //}
   }
 
 }
