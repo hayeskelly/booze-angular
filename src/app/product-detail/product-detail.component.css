@@ -1,5 +1,26 @@
 .column {
     float: left;
-    width: 50%;
+}
+.left {
+    width: 40%;
+    margin-right: 25%;
+}
+.right {
+    width: 60%;
 }
 
+li {
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    border-bottom: 1px solid #ccc;
+
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 400px;
+   
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+}

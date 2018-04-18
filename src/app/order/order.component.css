@@ -18,3 +18,8 @@ button {
     font-size: 16px;
     font: arial;
 }
+
+.column {
+    float: left;
+    width: 50%;
+}

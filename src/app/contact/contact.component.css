@@ -2,3 +2,13 @@
     float: left;
     width: 33.33%;
 }
+
+body {
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    color: #000;
+}
+
+h2 {
+    font: 200 45px/1.5 Helvetica, Verdana, sans-serif;
+    color: #000;
+}

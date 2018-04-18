@@ -13,17 +13,13 @@ export class OrderService {
   constructor(private _http: HttpClient) { }
 
   private submitOrderUrl = 'http://localhost:5000/api/orders';
-  public orderId: number;
 
   order: IOrder;
   
-  submitOrder(order: IOrder): Observable<IOrder>  {
-    
-    //generate random orderId
-    this.orderId = Math.floor(Math.random() * 1000);
+  submitOrder(order: IOrder, orderId: number): Observable<IOrder>  {
     
     var info = {
-      id: this.orderId,
+      id: orderId,
       fname: order.fname,
       lname: order.lname,
       phone: order.phone,
@@ -32,13 +28,45 @@ export class OrderService {
       quantity: order.quantity
     }
 
-    console.log("Order service was pased a product id of "+info.productID);
+    console.log("Order service was passed an order id of "+info.id);
 
     let header = new HttpHeaders();
     header.append('Content-Type', 'application/json');
     header.append('Access-Control-Allow-Origin', 'http://localhost:4200');
 
     return this._http.post<IOrder>(this.submitOrderUrl, info, {headers: header});
+  }
+
+  private orderUrl = 'http://localhost:5000/api/orders/';
+  
+  getOrder(id: number): Observable<IOrder> {
+      
+    console.log("Getting order "+id);
+    
+    let header = new HttpHeaders();
+    header.append('Content-Type', 'application/json');
+    header.append('Access-Control-Allow-Origin', 'http://localhost:4200');
+    
+    this.orderUrl = this.orderUrl + id.toString();
+
+    console.log("Using URL: "+this.orderUrl);
+
+    return this._http.get<IOrder>(this.orderUrl, {headers: header});
+  }
+  
+  private orderInfoUrl = 'http://localhost:5000/api/orders/';
+ 
+  getOrderInfo(id: number, name: string): Observable<String> {
+    
+    this.orderInfoUrl = this.orderInfoUrl + id.toString() + "/" + name;
+
+    console.log("getting order info with url: "+this.orderInfoUrl);
+
+    let header = new HttpHeaders();
+    header.append('Content-Type', 'application/json');
+    header.append('Access-Control-Allow-Origin', 'http://localhost:4200');
+   
+    return this._http.get<String>(this.orderInfoUrl, {headers: header}).map(response => response.toString());
   }
 
 }

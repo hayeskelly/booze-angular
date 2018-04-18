@@ -11,12 +11,15 @@ import { StringDecoder } from 'string_decoder';
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
+
 export class OrderComponent implements OnInit {
 
   form: FormGroup;
   order: IOrder;
   orderId: number;
-  //myOrderData: String;
+  newOrder: IOrder;
+
+  myOrderData: String;
   
   constructor(private fb: FormBuilder, private _orderService: OrderService) {
     this.form = this.fb.group({
@@ -30,13 +33,26 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit() {
+  
   }
 
   PostData(form: NgForm) {
-    
-    console.log("Order component sending productID Ordered: "+form.value.productID);
 
-    this._orderService.submitOrder(form.value).subscribe(order => {this.order = order;}, error => console.log(error));
+    //generate random orderId
+    this.orderId = Math.floor(Math.random() * 10000);
+    console.log("order id generated from order component: "+this.orderId);
+    
+    this._orderService.submitOrder(form.value, this.orderId).subscribe(order => {this.order = order;}, error => console.log(error));
+
+    //console.log("calling getORder from component with id: "+this.orderId);
+    //this._orderService.getOrder(this.orderId);
+    //this._orderService.getOrder(this.orderId).subscribe(newOrder => {this.newOrder = newOrder;}, error => console.log(error));
+
+    //console.log("Order total returned: "+this.order.total);
+    //console.log("Order pickupNum returned: "+this.order.pickupNum);
+
+    form.resetForm();
   }
+
 
 }

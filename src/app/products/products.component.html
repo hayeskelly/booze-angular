@@ -1,16 +1,15 @@
 
-<h1>Products</h1>
+<h2>Products</h2>
 
 <div class = "column">
-  <ul class="products">
-    <li *ngFor="let product of products" [class.selected]="product === selectedProduct" (click)="onSelect(product)">
-      {{product.name}}
-    </li>
-  </ul>
+    <ul class="products">
+      <li *ngFor="let product of products" [class.selected]="product === selectedProduct" (click)="onSelect(product)">
+          {{product.name}}
+      </li>
+    </ul>
 </div>
 
 <div class="column">
   <app-product-detail [product]='selectedProduct'></app-product-detail>
 </div>
-
 
